@@ -20,7 +20,7 @@ public interface SyllabusRepository extends JpaRepository<SyllabusEntity,Integer
     @Query(value = "SELECT new com.em.syllabus.dto.queryMapper.GetSyllabusQueryMapper(SM.id, SM.syllabusName, SM.description, SM.topics, SM.duration) FROM SyllabusEntity SM WHERE SM.id =:id AND SM.isActive = 1")
     GetSyllabusQueryMapper getSyllabusById(Integer id);
 
-    SyllabusEntity findByIdAndIsActive(Integer id,Integer isActive);
+    SyllabusEntity findBySyllabusIdAndIsActive(Integer id,Integer isActive);
 
 
     @Modifying

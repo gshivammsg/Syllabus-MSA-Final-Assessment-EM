@@ -15,7 +15,6 @@ public class SyllabusRequestDTO {
     @JsonProperty("syllabus_name")
     private String syllabusName;
 
-
     @JsonProperty("description")
     private String description;
 
@@ -25,4 +24,3 @@ public class SyllabusRequestDTO {
     @JsonProperty("duration")
     private String duration;
 }
-//subject, description, topics, and duration

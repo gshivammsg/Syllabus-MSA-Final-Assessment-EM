@@ -20,8 +20,7 @@ import java.io.Serializable;
 public class ResponseModel implements Serializable {
 
     @JsonProperty("status")
-    @JsonAlias("status_code")
-    private int status;
+    private Integer status;
 
     @JsonProperty("current_server_time")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
