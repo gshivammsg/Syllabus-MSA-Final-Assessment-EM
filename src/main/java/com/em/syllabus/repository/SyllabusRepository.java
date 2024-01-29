@@ -1,7 +1,6 @@
 package com.em.syllabus.repository;
 
 import com.em.syllabus.dto.queryMapper.GetSyllabusQueryMapper;
-import com.em.syllabus.dto.request_dto.SyllabusRequestDTO;
 import com.em.syllabus.entity.SyllabusEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

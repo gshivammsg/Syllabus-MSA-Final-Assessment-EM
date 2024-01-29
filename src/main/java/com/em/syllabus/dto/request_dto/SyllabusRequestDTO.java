@@ -16,7 +16,6 @@ public class SyllabusRequestDTO {
     @JsonProperty("id")
     private Integer id;
 
-
     @NotEmpty(message = "syllabus_name cannot be empty")
     @JsonProperty("syllabus_name")
     private String syllabusName;
