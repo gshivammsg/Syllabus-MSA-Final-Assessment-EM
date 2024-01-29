@@ -10,4 +10,6 @@ public final class EndPointsConstants {
     public static final String ADD_TAG_TO_SYLLABUS = "/addTagToSyllabus";
     public static final String REMOVE_TAG_FROM_SYLLABUS = "/removeTagFromSyllabus";
     public static final String TAGS_FROM_SYLLABUS_ID = "/getTagsBySyllabusId";
+    public static final String DELETE_TAG_ASSOCIATE_BY_SYLLABUS_ID = "/deleteTagAssociatedBySyllabusId";
+    public static final String REMOVE_CACHE = "/removeCache";
 }

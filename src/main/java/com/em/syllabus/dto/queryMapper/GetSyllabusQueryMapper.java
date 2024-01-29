@@ -8,7 +8,7 @@ import lombok.*;
 @Setter
 @Builder
 public class GetSyllabusQueryMapper {
-    private Integer id;
+    private Integer syllabusId;
     private String syllabusName;
     private String description;
     private String topics;

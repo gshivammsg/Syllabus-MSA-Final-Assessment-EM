@@ -14,14 +14,18 @@ import java.util.List;
 @Repository
 public interface SyllabusRepository extends JpaRepository<SyllabusEntity,Integer> {
 
-    @Query(value = "SELECT new com.em.syllabus.dto.queryMapper.GetSyllabusQueryMapper(SM.id, SM.syllabusName, SM.description, SM.topics, SM.duration) FROM SyllabusEntity SM WHERE SM.isActive = 1")
+    @Query(value = "SELECT new com.em.syllabus.dto.queryMapper.GetSyllabusQueryMapper(SM.syllabusId, SM.syllabusName, SM.description, SM.topics, SM.duration) FROM SyllabusEntity SM WHERE SM.isActive = 1")
     List<GetSyllabusQueryMapper> getAllSyllabusDetails();
+
+    List<SyllabusEntity> findByIsActive(Integer isActive);
 
     @Query(value = "SELECT new com.em.syllabus.dto.queryMapper.GetSyllabusQueryMapper(SM.id, SM.syllabusName, SM.description, SM.topics, SM.duration) FROM SyllabusEntity SM WHERE SM.id =:id AND SM.isActive = 1")
     GetSyllabusQueryMapper getSyllabusById(Integer id);
 
-    SyllabusEntity findBySyllabusIdAndIsActive(Integer id,Integer isActive);
+    SyllabusEntity findBySyllabusIdAndIsActive(Integer syllabusId,Integer isActive);
 
+
+    SyllabusEntity findBySyllabusName(String syllabusName);
 
     @Modifying
     @Transactional

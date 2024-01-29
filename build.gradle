@@ -26,20 +26,22 @@ ext {
 }
 
 dependencies {
-	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis'
 
-//	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
-	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '3.2.1'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.2.0'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.2.1'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.9.RELEASE'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'javax.servlet:javax.servlet-api:4.0.1' // Use the appropriate version
-//	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-//	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+	implementation 'javax.servlet:javax.servlet-api:4.0.1'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation group: 'org.apache.tomcat', name: 'tomcat-jdbc', version: '9.0.30'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '3.2.0'
 }
 
 dependencyManagement {
