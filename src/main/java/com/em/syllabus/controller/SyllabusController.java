@@ -35,8 +35,7 @@ public class SyllabusController {
 
     @Cacheable(key = "#id", value = "getSyllabusById")
     @GetMapping(GET_SYLLABUS_BY_ID+"/{id}")
-    public SyllabusResponseDTO syllabusById(@PathVariable Integer id){
-        System.out.println("get syllabus by id ki caching -----> ");
+    public SyllabusResponseDTO getSyllabusById(@PathVariable Integer id){
         return syllabusService.getSyllabusById(id);
     }
 
