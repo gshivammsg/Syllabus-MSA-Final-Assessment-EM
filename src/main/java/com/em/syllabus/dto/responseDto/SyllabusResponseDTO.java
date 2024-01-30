@@ -1,4 +1,4 @@
-package com.em.syllabus.dto.response_dto;
+package com.em.syllabus.dto.responseDto;
 
 import com.em.syllabus.utils.ResponseModel;
 import com.fasterxml.jackson.annotation.JsonProperty;

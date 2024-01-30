@@ -1,18 +1,18 @@
-package com.em.syllabus.dto.response_dto;
+package com.em.syllabus.dto.responseDto;
 
 import com.em.syllabus.utils.ResponseModel;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import java.util.List;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @SuperBuilder
-public class GetAllSyllabusResponseDTO extends ResponseModel{
-    @JsonProperty("syllabus_data")
-    private List<SyllabusResponseDTO> syllabusData;
+public class TagResponseDTO extends ResponseModel {
+    @JsonProperty("tag_id")
+    private Integer id;
+    @JsonProperty("tag_name")
+    private String tagName;
 }

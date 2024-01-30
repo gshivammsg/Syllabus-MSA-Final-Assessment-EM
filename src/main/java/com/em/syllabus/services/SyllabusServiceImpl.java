@@ -1,9 +1,9 @@
 package com.em.syllabus.services;
 
 import com.em.syllabus.dto.queryMapper.GetSyllabusQueryMapper;
-import com.em.syllabus.dto.request_dto.AddTagToSyllabusRequestDTO;
-import com.em.syllabus.dto.request_dto.SyllabusRequestDTO;
-import com.em.syllabus.dto.response_dto.*;
+import com.em.syllabus.dto.requestDto.AddTagToSyllabusRequestDTO;
+import com.em.syllabus.dto.requestDto.SyllabusRequestDTO;
+import com.em.syllabus.dto.responseDto.*;
 import com.em.syllabus.entity.SyllabusEntity;
 import com.em.syllabus.entity.SyllabusTagMappingEntity;
 import com.em.syllabus.feign.TagMSAClientService;
@@ -56,7 +56,7 @@ public class SyllabusServiceImpl implements SyllabusService {
     }
 
     @Override
-    public GetAllSyllabusResponseDTO getAllSyllabus() {
+    public AllSyllabusResponseDTO getAllSyllabus() {
         List<SyllabusEntity> allSyllabusData = syllabusRepository.findByIsActive(ACTIVE);
         List<SyllabusResponseDTO> syllabusResponseDTO = new ArrayList<>();
         for (SyllabusEntity data:allSyllabusData){
@@ -70,13 +70,13 @@ public class SyllabusServiceImpl implements SyllabusService {
                     .build());
         }
         if(syllabusResponseDTO.isEmpty()){
-            return GetAllSyllabusResponseDTO.builder()
+            return AllSyllabusResponseDTO.builder()
                     .status(HttpStatus.NOT_FOUND.value())
                     .message(SYLLABUS_NOT_FOUND)
                     .currentServerTime(Utils.getCurrentServerTime())
                     .build();
         }
-        return GetAllSyllabusResponseDTO.builder()
+        return AllSyllabusResponseDTO.builder()
                 .syllabusData(syllabusResponseDTO)
                 .status(HttpStatus.OK.value())
                 .message(HttpStatus.OK.toString())
@@ -202,10 +202,10 @@ public class SyllabusServiceImpl implements SyllabusService {
     }
 
     @Override
-    public GetAllTagResponseDTO getTagsBySyllabusId(Integer syllabusId) {
+    public AllTagResponseDTO getTagsBySyllabusId(Integer syllabusId) {
         List<SyllabusTagMappingEntity> syllabusTagMappingEntities = syllabusTagMappingRepository.findAllBySyllabusIdAndIsActive(syllabusId, ACTIVE);
         if(syllabusTagMappingEntities.isEmpty()){
-            return GetAllTagResponseDTO.builder()
+            return AllTagResponseDTO.builder()
                     .status(HttpStatus.NOT_FOUND.value())
                     .message(SYLLABUS_TAG_ASSOCIATION_NOT_FOUND)
                     .currentServerTime(Utils.getCurrentServerTime())
@@ -216,7 +216,7 @@ public class SyllabusServiceImpl implements SyllabusService {
             tagResponseDTOSList.add(tagMSAClientService.getTagById(data.getTagId()));
         }
 
-        return GetAllTagResponseDTO.builder()
+        return AllTagResponseDTO.builder()
                 .allTagResponseData(tagResponseDTOSList)
                 .status(HttpStatus.OK.value())
                 .message(HttpStatus.OK.toString())

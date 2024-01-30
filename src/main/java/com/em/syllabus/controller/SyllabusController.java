@@ -1,11 +1,11 @@
 package com.em.syllabus.controller;
 
-import com.em.syllabus.dto.request_dto.AddTagToSyllabusRequestDTO;
-import com.em.syllabus.dto.request_dto.SyllabusRequestDTO;
-import com.em.syllabus.dto.response_dto.GetAllSyllabusResponseDTO;
-import com.em.syllabus.dto.response_dto.GetAllTagResponseDTO;
-import com.em.syllabus.dto.response_dto.SyllabusResponseDTO;
-import com.em.syllabus.dto.response_dto.SyllabusTagMappingResponseDTO;
+import com.em.syllabus.dto.requestDto.AddTagToSyllabusRequestDTO;
+import com.em.syllabus.dto.requestDto.SyllabusRequestDTO;
+import com.em.syllabus.dto.responseDto.AllSyllabusResponseDTO;
+import com.em.syllabus.dto.responseDto.AllTagResponseDTO;
+import com.em.syllabus.dto.responseDto.SyllabusResponseDTO;
+import com.em.syllabus.dto.responseDto.SyllabusTagMappingResponseDTO;
 import com.em.syllabus.services.SyllabusService;
 import com.em.syllabus.utils.ResponseModel;
 import jakarta.validation.Valid;
@@ -29,13 +29,13 @@ public class SyllabusController {
     }
 
     @GetMapping(GET_ALL_SYLLABUS)
-    public GetAllSyllabusResponseDTO getAllSyllabus(){
+    public AllSyllabusResponseDTO allSyllabus(){
         return syllabusService.getAllSyllabus();
     }
 
     @Cacheable(key = "#id", value = "getSyllabusById")
     @GetMapping(GET_SYLLABUS_BY_ID+"/{id}")
-    public SyllabusResponseDTO getSyllabusById(@PathVariable Integer id){
+    public SyllabusResponseDTO syllabusById(@PathVariable Integer id){
         System.out.println("get syllabus by id ki caching -----> ");
         return syllabusService.getSyllabusById(id);
     }
@@ -64,7 +64,7 @@ public class SyllabusController {
     }
 
     @GetMapping(TAGS_FROM_SYLLABUS_ID+"/{id}")
-    public GetAllTagResponseDTO getTagsBySyllabusId(@PathVariable Integer id){
+    public AllTagResponseDTO tagsBySyllabusId(@PathVariable Integer id){
         return syllabusService.getTagsBySyllabusId(id);
     }
 

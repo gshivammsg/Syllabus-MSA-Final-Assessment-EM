@@ -1,4 +1,4 @@
-package com.em.syllabus.dto.request_dto;
+package com.em.syllabus.dto.requestDto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Min;

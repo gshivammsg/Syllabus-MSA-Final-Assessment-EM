@@ -1,6 +1,6 @@
 package com.em.syllabus.feign;
 
-import com.em.syllabus.dto.response_dto.TagResponseDTO;
+import com.em.syllabus.dto.responseDto.TagResponseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

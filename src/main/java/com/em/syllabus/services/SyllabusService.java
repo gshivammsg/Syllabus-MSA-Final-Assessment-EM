@@ -1,17 +1,17 @@
 package com.em.syllabus.services;
 
-import com.em.syllabus.dto.request_dto.AddTagToSyllabusRequestDTO;
-import com.em.syllabus.dto.request_dto.SyllabusRequestDTO;
-import com.em.syllabus.dto.response_dto.GetAllSyllabusResponseDTO;
-import com.em.syllabus.dto.response_dto.GetAllTagResponseDTO;
-import com.em.syllabus.dto.response_dto.SyllabusResponseDTO;
-import com.em.syllabus.dto.response_dto.SyllabusTagMappingResponseDTO;
+import com.em.syllabus.dto.requestDto.AddTagToSyllabusRequestDTO;
+import com.em.syllabus.dto.requestDto.SyllabusRequestDTO;
+import com.em.syllabus.dto.responseDto.AllSyllabusResponseDTO;
+import com.em.syllabus.dto.responseDto.AllTagResponseDTO;
+import com.em.syllabus.dto.responseDto.SyllabusResponseDTO;
+import com.em.syllabus.dto.responseDto.SyllabusTagMappingResponseDTO;
 import com.em.syllabus.utils.ResponseModel;
 
 public interface SyllabusService {
         SyllabusResponseDTO addSyllabus(SyllabusRequestDTO syllabusRequestDTO);
 
-        GetAllSyllabusResponseDTO getAllSyllabus();
+        AllSyllabusResponseDTO getAllSyllabus();
 
         SyllabusResponseDTO getSyllabusById(Integer id);
 
@@ -22,7 +22,7 @@ public interface SyllabusService {
 
         ResponseModel removeTagFromSyllabus(Integer syllabusTagMappingId);
 
-        GetAllTagResponseDTO getTagsBySyllabusId(Integer syllabusId);
+        AllTagResponseDTO getTagsBySyllabusId(Integer syllabusId);
 
         ResponseModel deleteTagAssociatedBySyllabusId(AddTagToSyllabusRequestDTO addTagToSyllabusRequestDTO);
 }
