@@ -14,12 +14,12 @@ import lombok.*;
 public class AddTagToSyllabusRequestDTO {
 
     @Min(value = 1)
-    @NotNull
+    @NotNull(message = "syllabus_id should not be null")
     @JsonProperty("syllabus_id")
     private Integer syllabusId;
 
     @Min(value = 1)
-    @NotNull
+    @NotNull(message = "tag_id should not be null")
     @JsonProperty("tag_id")
     private Integer tagId;
 }

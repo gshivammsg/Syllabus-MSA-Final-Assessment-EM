@@ -16,19 +16,19 @@ public class SyllabusRequestDTO {
     @JsonProperty("id")
     private Integer id;
 
-    @NotEmpty()
+    @NotEmpty(message = "syllabus_name should not be empty")
     @JsonProperty("syllabus_name")
     private String syllabusName;
 
-    @NotEmpty()
+    @NotEmpty(message = "syllabus_name should not be empty")
     @JsonProperty("description")
     private String description;
 
-    @NotEmpty()
+    @NotEmpty(message = "syllabus_name should not be empty")
     @JsonProperty("topics")
     private String topics;
 
-    @NotEmpty()
+    @NotEmpty(message = "syllabus_name should not be empty")
     @JsonProperty("duration")
     private String duration;
 }

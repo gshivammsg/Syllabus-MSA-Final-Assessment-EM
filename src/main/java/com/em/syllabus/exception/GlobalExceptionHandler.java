@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
         }
         ResponseModel responseModel = ResponseModel.builder()
                 .status(HttpStatus.BAD_REQUEST.value())
-                .message(errors.get(0).getField() + " is invalid")
+                .message(errors.isEmpty() ? "request is invalid":errors.get(0).getField() + " is invalid")
                 .currentServerTime(Utils.getCurrentServerTime()).build();
 
         return new ResponseEntity<>(responseModel, HttpStatus.BAD_REQUEST);
